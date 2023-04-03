@@ -1,14 +1,10 @@
-import { FormikInput } from "./common/inputs/FormikInput";
+import { FormikInput } from "../common/inputs/FormikInput";
 import React, { useMemo } from "react";
 import { useFormik } from "formik";
 import debounce from "lodash.debounce";
 import { useRedux } from "hooks/use-redux";
 import { setQuery } from "store/repositories";
-import styled from "styled-components";
-
-const Form = styled.form`
-  margin-left: 24px;
-`;
+import * as S from "./styled";
 
 export const SearchForm = () => {
   const { dispatch } = useRedux();
@@ -26,13 +22,13 @@ export const SearchForm = () => {
   }, [handleSubmit]);
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <S.Form onSubmit={handleSubmit}>
       <FormikInput
         formik={formik}
         onChange={onChangeHandler}
         name="q"
         placeholder="Search"
       />
-    </Form>
+    </S.Form>
   );
 };

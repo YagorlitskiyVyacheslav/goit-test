@@ -11,7 +11,7 @@ export const Home = () => {
   const { query, meta } = select(repositoriesSelector);
 
   useEffect(() => {
-    dispatch(getRepositoriesAsync(query));
+    dispatch(getRepositoriesAsync({ q: query }));
   }, [dispatch, query]);
 
   return (
@@ -21,7 +21,9 @@ export const Home = () => {
       <Pagination
         {...meta}
         lastPage={meta.lastPage > 50 ? 50 : meta.lastPage}
-        onPageChange={(page) => dispatch(getRepositoriesAsync(query, page))}
+        onPageChange={(page) =>
+          dispatch(getRepositoriesAsync({ q: query, page }))
+        }
       />
     </div>
   );

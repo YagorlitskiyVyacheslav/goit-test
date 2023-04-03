@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledSpinner = styled.svg`
+export const StyledSpinner = styled.svg`
   animation: rotate 2s linear infinite;
   width: 100px;
   height: 100px;
@@ -32,16 +31,3 @@ const StyledSpinner = styled.svg`
     }
   }
 `;
-
-export const Spinner = () => (
-  <StyledSpinner viewBox="0 0 50 50">
-    <circle
-      className="path"
-      cx="25"
-      cy="25"
-      r="20"
-      fill="none"
-      strokeWidth="4"
-    />
-  </StyledSpinner>
-);

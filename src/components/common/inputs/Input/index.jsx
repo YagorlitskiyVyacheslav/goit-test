@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./styles";
+import * as S from "./styled";
 
 export const Input = ({ type = "text", error, className, ...props }) => {
   return (
